@@ -25,6 +25,8 @@ public class ExportToExcelController {
 	@Autowired
 	private DocProgramService docProgramService;
 	
+	
+	//导出Excel
 	@RequestMapping(value="/pyjhkcxxZhcxToExcel/{xuanzezd}/{wherezd}/{filepath}",method = RequestMethod.GET)
 	public @ResponseBody void pyjhkcxxZhcxToExcel(@PathVariable("xuanzezd") String xuanzezd, @PathVariable("wherezd") String wherezd,
 			@PathVariable("filepath") String filepath) {
