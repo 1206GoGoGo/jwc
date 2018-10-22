@@ -61,7 +61,7 @@ public class SysXqController {
 	 * 通过校区代码删除校区
 	 * @param xqdm
 	 */
-	@RequestMapping(value="/delet/{xqdm}", method = RequestMethod.GET)
+	@RequestMapping(value="/delete/{xqdm}", method = RequestMethod.GET)
 	public @ResponseBody String deleteXq(@PathVariable String xqdm) {
 		dmXqService.deleteXq(xqdm);
 		return "DeletlSuccess";
