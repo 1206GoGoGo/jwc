@@ -8,7 +8,7 @@ import com.whut.pojo.pyjhkcxxZhcxObjM;
 
 public interface DocProgramService {
 	/**
-	 * 导出培养计划课程信息综合查询结果到Excel中
+	 * 导出培养计划课程信息综合查询结果到Excel
 	 * 
 	 * @param len
 	 * @param filepath
