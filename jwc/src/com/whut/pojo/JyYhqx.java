@@ -1,5 +1,7 @@
 package com.whut.pojo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 /**
  * JyYhqx entity. @author MyEclipse Persistence Tools
  */
@@ -9,6 +11,7 @@ public class JyYhqx implements java.io.Serializable {
 	// Fields
 
 	private String yhid;
+	@JsonBackReference
 	private JyQx jyQx;
 	private String zt;
 

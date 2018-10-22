@@ -16,7 +16,7 @@ public class SysXyServiceImpl implements SysXyService {
 	@Autowired
 	private BaseHibernateDAO dao;
 
-
+  
 	public void addXy(SysXy sysXy) {
 		dao.add(sysXy);
 	}
