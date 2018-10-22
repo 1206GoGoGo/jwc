@@ -75,8 +75,8 @@ public class SysXyController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/delet/{id}", method = RequestMethod.GET)
-	public @ResponseBody String deletXy(@PathVariable String id){
+	@RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
+	public @ResponseBody String deleteXy(@PathVariable String id){
 		SysXy sysXy = sysXyService.getXyById(id);
 		sysXyService.deleteXy(sysXy);
 		return "DeletlSuccess";
