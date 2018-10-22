@@ -10,7 +10,7 @@
             <column name="ZYDM" length="5" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="sysX" class="com.whut.pojo.SysX" fetch="select" >
+        <many-to-one name="sysX" class="com.whut.pojo.SysX" fetch="select" lazy="false">
             <column name="XDM" length="5" />
         </many-to-one>
         <property name="zymc" type="java.lang.String">
