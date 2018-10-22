@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * JyQx entity. @author MyEclipse Persistence Tools
  */
@@ -15,7 +17,9 @@ public class JyQx implements java.io.Serializable {
 	private BigDecimal qxid;
 	private String qxmc;
 	private String zt;
-	private Set jyYhqxes = new HashSet(0);
+	
+	@JsonManagedReference
+	private Set<JyYhqx> jyYhqxes = new HashSet(0);
 
 	// Constructors
 
@@ -68,7 +72,7 @@ public class JyQx implements java.io.Serializable {
 		return this.jyYhqxes;
 	}
 
-	public void setJyYhqxes(Set jyYhqxes) {
+	public void setJyYhqxes(Set<JyYhqx> jyYhqxes) {
 		this.jyYhqxes = jyYhqxes;
 	}
 
