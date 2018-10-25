@@ -1,5 +1,6 @@
 package com.whut.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,15 +25,17 @@ public class ExportToExcelController {
 
 	@Autowired
 	private DocProgramService docProgramService;
+	@Autowired
+	private JyPyjhkcxxService jyPyjhkcxxService;
 	
 	
 	//导出Excel
-	@RequestMapping(value="/pyjhkcxxZhcxToExcel/{xuanzezd}/{wherezd}/{filepath}",method = RequestMethod.GET)
-	public @ResponseBody void pyjhkcxxZhcxToExcel(@PathVariable("xuanzezd") String xuanzezd, @PathVariable("wherezd") String wherezd,
-			@PathVariable("filepath") String filepath) {
-		JyPyjhkcxxService jyPyjhkcxxService = new JyPyjhkcxxServiceImpl();
-		List<pyjhkcxxZhcxObj> datas = jyPyjhkcxxService.pyjhkcxxZhcx(xuanzezd,
-				wherezd);
+	@RequestMapping(value="/pyjhkcxxZhcxToExcel",method = RequestMethod.GET)
+	public @ResponseBody void pyjhkcxxZhcxToExcel(String xuanzezd,String wherezd,String filepath) {
+		//JyPyjhkcxxService jyPyjhkcxxService = new JyPyjhkcxxServiceImpl();
+		
+		List<pyjhkcxxZhcxObj>datas = jyPyjhkcxxService.pyjhkcxxZhcx(xuanzezd,wherezd);
+		
 		int len = datas.size();
 		pyjhkcxxZhcxObjM nameobj = new pyjhkcxxZhcxObjM();
 		pyjhkcxxZhcxObjF flagobj = new pyjhkcxxZhcxObjF();
