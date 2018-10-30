@@ -20,8 +20,8 @@ public class JyPyjhkcxxController {
 	@Autowired
 	private JyPyjhkcxxService jyPyjhkcxxService;
 	
-	@RequestMapping(value="/pyjhkcxxZhcx/{whatString}/{whereString}",method = RequestMethod.GET)
-	public @ResponseBody List<pyjhkcxxZhcxObj> pyjhkcxxZhcx(@PathVariable("whatString") String whatString, @PathVariable("whereString") String whereString) {
+	@RequestMapping(value="/pyjhkcxxZhcx",method = RequestMethod.GET)
+	public @ResponseBody List<pyjhkcxxZhcxObj> pyjhkcxxZhcx(String whatString, String whereString) {
 		return jyPyjhkcxxService.pyjhkcxxZhcx(whatString, whereString);
 	}
 }

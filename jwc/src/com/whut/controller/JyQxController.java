@@ -30,14 +30,14 @@ public class JyQxController {
 		return quanXianService.getAllqx();
 	}
 	
-	@RequestMapping(value="/getyhID/{yhid}",method = RequestMethod.GET)
-	public @ResponseBody List<JyYhqx> getyhID(@PathVariable String yhid) {
+	@RequestMapping(value="/getyhID",method = RequestMethod.GET)
+	public @ResponseBody List<JyYhqx> getyhID(String yhid) {
 		List<JyYhqx> list = quanXianService.getyhID(yhid);
 		return list;
 	}
 	
-	@RequestMapping(value="/search/{xm}",method = RequestMethod.GET)
-	public @ResponseBody List<SysJs> search(@PathVariable String xm) {
+	@RequestMapping(value="/search",method = RequestMethod.GET)
+	public @ResponseBody List<SysJs> search(String xm) {
 		List<SysJs> list = quanXianService.search(xm);
 		return list;
 	}
@@ -47,8 +47,8 @@ public class JyQxController {
 		return quanXianService.getAll();
 	}
 
-	@RequestMapping(value="/search_JW/{xm}",method = RequestMethod.GET)
-	public @ResponseBody List<SysJwyh> search_JW(@PathVariable String xm) {
+	@RequestMapping(value="/search_JW",method = RequestMethod.GET)
+	public @ResponseBody List<SysJwyh> search_JW(String xm) {
 		List<SysJwyh> list = quanXianService.search_JW(xm);
 		return list;
 	}
@@ -58,8 +58,8 @@ public class JyQxController {
 		return quanXianService.searchAll_JW();
 	}
 
-	@RequestMapping(value="/mofifyQX/{yhid}/{jyQx}",method = RequestMethod.GET)
-	public @ResponseBody void mofifyQX(@PathVariable("yhid") String yhid, @PathVariable("jyQx") int jyQx) {
+	@RequestMapping(value="/mofifyQX",method = RequestMethod.GET)
+	public @ResponseBody void mofifyQX(String yhid,int jyQx) {
 		BigDecimal bigDecimal = new BigDecimal(jyQx);
 		quanXianService.mofifyQX(yhid, bigDecimal);
 	}

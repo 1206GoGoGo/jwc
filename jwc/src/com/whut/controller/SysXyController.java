@@ -32,8 +32,8 @@ public class SysXyController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/get/{id}", method = RequestMethod.GET)
-	public @ResponseBody SysXy getXyById(@PathVariable String id){
+	@RequestMapping(value="/get", method = RequestMethod.GET)
+	public @ResponseBody SysXy getXyById(String id){
 		
 		SysXy sysxY = sysXyService.getXyById(id);
 		return sysxY;
@@ -44,8 +44,8 @@ public class SysXyController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/getXymc/{id}", method = RequestMethod.GET,produces="text/plain;charset=UTF-8")
-	public @ResponseBody String getXymcById(@PathVariable String id) {
+	@RequestMapping(value="/getXymc", method = RequestMethod.GET,produces="text/plain;charset=UTF-8")
+	public @ResponseBody String getXymcById(String id) {
 		return sysXyService.getXymcById(id);
 	}
 	
@@ -75,8 +75,8 @@ public class SysXyController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
-	public @ResponseBody String deleteXy(@PathVariable String id){
+	@RequestMapping(value="/delete", method = RequestMethod.GET)
+	public @ResponseBody String deleteXy(String id){
 		SysXy sysXy = sysXyService.getXyById(id);
 		sysXyService.deleteXy(sysXy);
 		return "DeletlSuccess";
