@@ -33,7 +33,7 @@ public class DmKcxzServiceImpl implements DmKcxzService {
 	//新添加（通过课程性质代码获取课程性质）
 	public DmKcxz getKcxzById(String kcxzdm) {
 		String hql = "from DmKcxz as n where n.kcxzdm = '" + kcxzdm + "'";
-		return (DmKcxz) dao.search(hql);
+		return (DmKcxz) dao.getObject(hql);
 	}
 
 	@Override
