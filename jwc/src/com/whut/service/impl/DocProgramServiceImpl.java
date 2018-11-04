@@ -30,6 +30,11 @@ import freemarker.template.TemplateException;
 public class DocProgramServiceImpl implements DocProgramService {
 	
 	private Configuration configuration = null;
+	
+	public DocProgramServiceImpl() {
+		configuration = new Configuration();
+		configuration.setDefaultEncoding("UTF-8");
+	}
 		
 	public void pyjhkcxxZhcxToExcel(List<pyjhkcxxZhcxObj> datas, pyjhkcxxZhcxObjM nameobj, pyjhkcxxZhcxObjF flagobj, int len, String filepath) {
 
@@ -47,6 +52,8 @@ public class DocProgramServiceImpl implements DocProgramService {
 		// 模板文件
 		String ftlpath = this.getClass().getResource("/").toString().replace("file:/", "").replace("WEB-INF", "userfile")
 				.replace("classes", "docTemplate");
+		
+		String path = this.getClass().getClassLoader().getResource("").getPath();
 
 		generatFile(dataMap, ftlpath, "PyjhkcxxZhcx.ftl", targetFile);
 	}
