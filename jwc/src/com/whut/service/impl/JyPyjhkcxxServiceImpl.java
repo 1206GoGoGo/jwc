@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.whut.dao.BaseHibernateDAO;
+import com.whut.pojo.JyPyjhkcxx;
 import com.whut.pojo.pyjhkcxxZhcxObj;
 import com.whut.service.JyPyjhkcxxService;
 
@@ -35,6 +36,18 @@ public class JyPyjhkcxxServiceImpl implements JyPyjhkcxxService {
 		List<pyjhkcxxZhcxObj> list = dao.pyjhkcxxZhcx(sql);
 		return list;
 	}
-
 	
+	/**
+	 * 逻辑删除jxjhh所有的课程
+	 * */
+	@Override
+	public void delJyPyjhkcxxByJxjhh(String jxjhh) {
+		@SuppressWarnings("unchecked")
+		List<JyPyjhkcxx> kcxxList = dao.search("from JyPyjhkcxx as n where n.jxjhh = '" + jxjhh + "'");
+		for (JyPyjhkcxx jyPyjhkcxx : kcxxList) {
+			jyPyjhkcxx.setZt(0);
+			dao.modify(jyPyjhkcxx);
+		}
+	}
+
 }

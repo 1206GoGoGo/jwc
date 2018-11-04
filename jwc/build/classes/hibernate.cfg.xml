@@ -60,5 +60,9 @@
 		<mapping resource="com/whut/pojo/XjXxb.hbm.xml"/>
 		<mapping resource="com/whut/pojo/DmKcxz.hbm.xml"/>
 		<mapping resource="com/whut/pojo/DmKclb.hbm.xml"/>
+		<mapping resource="com/whut/pojo/DmXklb.hbm.xml"/>
+		<mapping resource="com/whut/pojo/DmKhfs.hbm.xml"/>
+		<mapping resource="com/whut/pojo/JyZyxx.hbm.xml"/>
+		<mapping resource="com/whut/pojo/JyPyjhyq.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

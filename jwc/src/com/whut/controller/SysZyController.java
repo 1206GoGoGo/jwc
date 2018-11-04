@@ -74,8 +74,8 @@ public class SysZyController {
 	 * @param zydm
 	 * @return
 	 */
-	@RequestMapping(value="/get/{zydm}", method = RequestMethod.GET)
-	public @ResponseBody SysZy getZyByzydm(@PathVariable String zydm) {
+	@RequestMapping(value="/get", method = RequestMethod.GET)
+	public @ResponseBody SysZy getZyByzydm(String zydm) {
 		SysZy sysZy = sysZyService.getZyByzydm(zydm);
 		return sysZy;
 	}
@@ -84,8 +84,8 @@ public class SysZyController {
 	 * 通过专业代码删除专业
 	 * @param zydm
 	 */
-	@RequestMapping(value="/delete/{zydm}", method = RequestMethod.GET)
-	public @ResponseBody String deleteZy(@PathVariable String zydm) {
+	@RequestMapping(value="/delete", method = RequestMethod.GET)
+	public @ResponseBody String deleteZy(String zydm) {
 		sysZyService.deleteZy(zydm);
 		return "DeletlSuccess";
 	}

@@ -14,5 +14,10 @@ public interface JyPyjhkcxxService {
 	public List<pyjhkcxxZhcxObj> pyjhkcxxZhcx(String whatString,
 			String whereString);
 
+	/**
+	 * 逻辑删除jxjhh所有的课程
+	 * */
+	public void delJyPyjhkcxxByJxjhh(String jxjhh);
+
 	
 }

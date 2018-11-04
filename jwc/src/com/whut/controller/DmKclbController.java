@@ -74,9 +74,10 @@ public class DmKclbController {
 	 * 删除课程类别
 	 * @param sysKclb
 	 */
-	@RequestMapping(value="/delete", method = RequestMethod.POST,consumes= "application/json")
-	public @ResponseBody String deleteKclb(@RequestBody DmKclb sysKclb) {
-		dmKclbService.deleteKclb(sysKclb);
+	@RequestMapping(value="/delete", method = RequestMethod.GET)
+	public @ResponseBody String deleteKclb(String kclbdm) {
+		DmKclb dmKclb = dmKclbService.getkclbBykclbdm(kclbdm);
+		dmKclbService.deleteKclb(dmKclb);
 		return "DeleteSuccess";
 	}
 
@@ -103,8 +104,8 @@ public class DmKclbController {
 	 * @param kclbdm
 	 * @return
 	 */
-	@RequestMapping(value="/getkclbBykclbdm/{kclbdm}", method = RequestMethod.GET)
-	public @ResponseBody DmKclb getkclbBykclbdm(@PathVariable String kclbdm) {
+	@RequestMapping(value="/getkclbBykclbdm", method = RequestMethod.GET)
+	public @ResponseBody DmKclb getkclbBykclbdm(String kclbdm) {
 		DmKclb dmKclb = dmKclbService.getkclbBykclbdm(kclbdm);
 		return dmKclb;
 	}

@@ -63,8 +63,8 @@ public class DmKcxzController {
 	 * 删除课程性质
 	 * @param dmKcxz
 	 */
-	@RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
-	public void deleteKcxz(@PathVariable String id) {
+	@RequestMapping(value="/delete", method = RequestMethod.GET)
+	public void deleteKcxz(String id) {
 		DmKcxz dmKcxz = dmKcxzService.getKcxzById(id);
 		dmKcxzService.deleteKcxz(dmKcxz);
 	}
