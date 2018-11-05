@@ -28,14 +28,14 @@ public class JyXxtxController {
 	}
 	
 	//根据时间段查询收件箱信息
-	@RequestMapping(value="/getXxtxByjsf/{jsf}/{sj1}/{sj2}",method = RequestMethod.GET)
-	public @ResponseBody List<JyXxtx> getXxtxByjsf(@PathVariable("jsf") String jsf,@PathVariable("sj1") String sj1,@PathVariable("sj2") String sj2){
+	@RequestMapping(value="/getXxtxByjsf",method = RequestMethod.GET)
+	public @ResponseBody List<JyXxtx> getXxtxByjsf(String jsf,String sj1,String sj2){
 		List<JyXxtx> list = jyXxtxService.getXxtxByjsf(jsf, sj1, sj2);
 		return list;
 	}
 	
-	@RequestMapping(value="/getListByjsf/{xymc}",method = RequestMethod.GET)
-	public @ResponseBody List<JyXxtx> getListByjsf(@PathVariable String xymc){
+	@RequestMapping(value="/getListByjsf",method = RequestMethod.GET)
+	public @ResponseBody List<JyXxtx> getListByjsf(String xymc){
 		List<JyXxtx> list = jyXxtxService.getListByjsf(xymc);
 		return list;
 	}
@@ -46,14 +46,14 @@ public class JyXxtxController {
 		jyXxtxService.afterviewMse(jyXxtx);
 	}
 	
-	@RequestMapping(value="/getXxtxByxxdm/{xxdm}",method = RequestMethod.GET)
-	public @ResponseBody JyXxtx getXxtxByxxdm(@PathVariable int xxdm) {
+	@RequestMapping(value="/getXxtxByxxdm",method = RequestMethod.GET)
+	public @ResponseBody JyXxtx getXxtxByxxdm(int xxdm) {
 		JyXxtx jyXxtx = jyXxtxService.getXxtxByxxdm(xxdm);
 		return jyXxtx;
 	}
 	
-	@RequestMapping(value="/getdelXxtxByxxdm/{xxdm}",method = RequestMethod.GET)
-	public @ResponseBody JyXxtx getdelXxtxByxxdm(@PathVariable String xxdm) {
+	@RequestMapping(value="/getdelXxtxByxxdm",method = RequestMethod.GET)
+	public @ResponseBody JyXxtx getdelXxtxByxxdm(String xxdm) {
 		JyXxtx list = jyXxtxService.getdelXxtxByxxdm(xxdm);
 		return list;
 	}
@@ -64,27 +64,27 @@ public class JyXxtxController {
 		jyXxtxService.deleteMse(jyXxtx);
 	}
 	
-	@RequestMapping(value="/getListByfsf/{xymc}",method = RequestMethod.GET)
-	public @ResponseBody List<JyXxtx> getListByfsf(@PathVariable String xymc) {
+	@RequestMapping(value="/getListByfsf",method = RequestMethod.GET)
+	public @ResponseBody List<JyXxtx> getListByfsf(String xymc) {
 		List<JyXxtx> list = jyXxtxService.getListByfsf(xymc);
 		return list;
 	}
 	
 	//根据时间段查询发件箱信息
-	@RequestMapping(value="/getXxtxByfsf/{fsf}/{sj1}/{sj2}",method = RequestMethod.GET)
-	public @ResponseBody List<JyXxtx> getXxtxByfsf(@PathVariable("fsf") String fsf,@PathVariable("sj1") String sj1,@PathVariable("sj2") String sj2) {
+	@RequestMapping(value="/getXxtxByfsf",method = RequestMethod.GET)
+	public @ResponseBody List<JyXxtx> getXxtxByfsf(String fsf,String sj1,String sj2) {
 		List<JyXxtx> list = jyXxtxService.getXxtxByfsf(fsf, sj1, sj2);
 		return list;
 	}
 	
-	@RequestMapping(value="/getdelXxtxByfsforjsf/{fsf}/{sj1}/{sj2}",method = RequestMethod.GET)
-	public @ResponseBody List<JyXxtx> getdelXxtxByfsforjsf(@PathVariable("fsf") String fsf,@PathVariable("sj1") String sj1,@PathVariable("sj2") String sj2) {
+	@RequestMapping(value="/getdelXxtxByfsforjsf",method = RequestMethod.GET)
+	public @ResponseBody List<JyXxtx> getdelXxtxByfsforjsf(String fsf,String sj1,String sj2) {
 		List<JyXxtx> list = jyXxtxService.getdelXxtxByfsforjsf(fsf, sj1, sj2);
 		return list;
 	}
 	
-	@RequestMapping(value="/getdelListByfsforjsf/{xymc}",method = RequestMethod.GET)
-	public @ResponseBody List<JyXxtx> getdelListByfsforjsf(@PathVariable String xymc) {
+	@RequestMapping(value="/getdelListByfsforjsf",method = RequestMethod.GET)
+	public @ResponseBody List<JyXxtx> getdelListByfsforjsf(String xymc) {
 		List<JyXxtx> list = jyXxtxService.getdelListByfsforjsf(xymc);
 		return list;
 	}

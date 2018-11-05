@@ -18,6 +18,8 @@ public interface JyPyjhkcxxService {
 	 * 逻辑删除jxjhh所有的课程
 	 * */
 	public void delJyPyjhkcxxByJxjhh(String jxjhh);
-
 	
+	public List<JyPyjhkcxx> getZypyKcByjxjhhAndKcmc(String jxjhh, String kcmc);
+	
+	public List<JyPyjhkcxx> getZypyKcByjxjhh(String jxjhh);
 }

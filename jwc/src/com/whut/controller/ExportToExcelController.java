@@ -32,8 +32,8 @@ public class ExportToExcelController {
 	//导出Excel
 	@RequestMapping(value="/pyjhkcxxZhcxToExcel",method = RequestMethod.GET)
 	public @ResponseBody void pyjhkcxxZhcxToExcel(String xuanzezd,String wherezd,String filepath) {
-		//JyPyjhkcxxService jyPyjhkcxxService = new JyPyjhkcxxServiceImpl();
 		
+		//xuanzezd是查询要显示的字段、wherezd是查询条件
 		List<pyjhkcxxZhcxObj>datas = jyPyjhkcxxService.pyjhkcxxZhcx(xuanzezd,wherezd);
 		
 		int len = datas.size();
