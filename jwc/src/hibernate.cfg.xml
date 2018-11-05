@@ -46,7 +46,9 @@
 		<mapping resource="com/whut/pojo/DmKclb.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyKcmk.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyKcz.hbm.xml"/>
+		<mapping resource="com/whut/pojo/JyKcmk.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyPyjhkcxx.hbm.xml"/>
+		<mapping resource="com/whut/pojo/JyPyjhkcxxb.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyQx.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyXxgs.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyXxtx.hbm.xml"/>
@@ -65,5 +67,7 @@
 		<mapping resource="com/whut/pojo/JyZyxx.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyPyjhyq.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyTsxxpy.hbm.xml"/>
+		<mapping resource="com/whut/pojo/JyTsxxkcjsdyb.hbm.xml"/>
+
 	</session-factory>
 </hibernate-configuration>

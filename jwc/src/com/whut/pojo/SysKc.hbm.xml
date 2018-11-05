@@ -126,6 +126,7 @@
         <property name="sfqy" type="java.lang.String">
             <column name="SFQY" length="10" />
         </property>
+
         <property name="kcyl4" type="java.lang.String">
             <column name="KCYL4" length="10" />
         </property>
