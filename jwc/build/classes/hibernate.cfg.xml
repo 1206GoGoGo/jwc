@@ -46,6 +46,7 @@
 		<mapping resource="com/whut/pojo/DmKclb.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyKcmk.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyKcz.hbm.xml"/>
+		<mapping resource="com/whut/pojo/JyKcmk.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyPyjhkcxx.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyPyjhkcxxb.hbm.xml"/>
 		<mapping resource="com/whut/pojo/JyQx.hbm.xml"/>
