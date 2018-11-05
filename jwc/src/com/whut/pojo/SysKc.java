@@ -3,6 +3,8 @@ package com.whut.pojo;
 import java.math.BigDecimal;
 import java.util.Set;
 
+import org.hibernate.dialect.function.VarArgsSQLFunction;
+
 /**
  * SysKc entity. @author MyEclipse Persistence Tools
  */
@@ -11,32 +13,35 @@ public class SysKc implements java.io.Serializable {
 
 	// Fields
 
-	private String kcdm;	
-	private DmKclb dmKclb;
-	private JyXxgs jyXxgs;	
-	private String kczwmc;
-	private String kcywmc;
-	private String xf;
-	private String kcxz;
-	private String xydm;
-	private String xdm;
-	private String yxyqdm;
-	private String kcjj;
-	private String kcywjj;
-	private Double zhxs;
-	private Double llxs;
-	private Double syxs;
-	private Double sjxs;		//更改为实践学时
-	private String kczyzyjmd;
-	private String zycks;
-	private String bz;
+	private String kcdm; //课程代码
+	
+	private DmKclb dmKclb;//课程类别代码
+	private JyXxgs jyXxgs;//选修归属
+	
+	private String kczwmc; //课程中文名称
+	private String kcywmc;//开课部门
+	private String xf;  //学分
+	private String kcxz;//课程性质
+	private String xydm;//学院代码
+	private String xdm;//系代码
+	private String yxyqdm;//预修要求
+	private String kcjj; //课程简介
+	private String kcywjj;//课程英文简介
+	private Double zhxs; //总学时
+	private Double llxs; //讲课学时
+	private Double syxs;//实验学时
+	private Double sjxs;//更改为实践学时
+	private String kczyzyjmd;//需要与目的
+	private String zycks;//主要参考书
+	private String bz; //备注
 	private String kcqmc;
-	private String kclbmc;
-	private Double kwxs;
-	private Double sjxs2;		//更改为上机学时
+	private String kclbmc;//课程类别名称
+	private Double kwxs; //课外学时
+	private Double sjxs2;//更改为上机学时
 	private String kcyl1;
+	private String sfqy;//是否弃用
 	private String kcyl2;
-	private String kcyl3;
+	//private String kcyl3;
 	private String kcyl4;
 	private String kcyl5;
 	private String kcyl6;
@@ -44,9 +49,8 @@ public class SysKc implements java.io.Serializable {
 	private String kcyl8;
 	private String kcyl9;
 	private String kcyl10;
-	private Double sjzs;
-	private int zt;
-	
+	private Double sjzs;//实践周数
+	private int zt;//状态
 
 	// Constructors
 
@@ -66,7 +70,7 @@ public class SysKc implements java.io.Serializable {
 			String yxyqdm, String kcjj, String kcywjj, Double zhxs,
 			Double llxs, Double syxs, Double sjxs, String kczyzyjmd,
 			String zycks, String bz, String kcqmc, String kclbmc, Double kwxs,
-			Double sjxs2, String kcyl1, String kcyl2, String kcyl3,
+			Double sjxs2, String sfqy, String kcyl1,String kcyl2,
 			String kcyl4, String kcyl5, String kcyl6, String kcyl7,
 			String kcyl8, String kcyl9, String kcyl10, Double sjzs, int zt,
 			Set jyGdxfdzsForXkcdm, Set jyGdxfdzsForKcdm, Set jyTsxxpies,
@@ -94,9 +98,10 @@ public class SysKc implements java.io.Serializable {
 		this.kclbmc = kclbmc;
 		this.kwxs = kwxs;
 		this.sjxs2 = sjxs2;
+		this.sfqy = sfqy;
 		this.kcyl1 = kcyl1;
 		this.kcyl2 = kcyl2;
-		this.kcyl3 = kcyl3;
+		//this.kcyl3 = kcyl3;
 		this.kcyl4 = kcyl4;
 		this.kcyl5 = kcyl5;
 		this.kcyl6 = kcyl6;
@@ -296,7 +301,7 @@ public class SysKc implements java.io.Serializable {
 	}
 
 	public String getKcyl1() {
-		return this.kcyl1;
+		return kcyl1;
 	}
 
 	public void setKcyl1(String kcyl1) {
@@ -311,14 +316,14 @@ public class SysKc implements java.io.Serializable {
 		this.kcyl2 = kcyl2;
 	}
 
-	public String getKcyl3() {
+	/*public String getKcyl3() {
 		return this.kcyl3;
 	}
 
 	public void setKcyl3(String kcyl3) {
 		this.kcyl3 = kcyl3;
 	}
-
+*/
 	public String getKcyl4() {
 		return this.kcyl4;
 	}
@@ -391,4 +396,13 @@ public class SysKc implements java.io.Serializable {
 		this.zt = zt;
 	}
 
+	public String getSfqy() {
+		return sfqy;
+	}
+
+	public void setSfqy(String sfqy) {
+		this.sfqy = sfqy;
+	}
+
+	
 }
