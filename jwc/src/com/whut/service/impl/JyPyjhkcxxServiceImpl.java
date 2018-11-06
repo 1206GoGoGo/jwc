@@ -120,20 +120,7 @@ public class JyPyjhkcxxServiceImpl implements JyPyjhkcxxService {
 
 	}
 
-	@Override
-	public List<JyPyjhkcxx> getZypyKcByjxjhh(String jxjhh) {
-		String hql = "from JyPyjhkcxx as n where n.jxjhh = '" + jxjhh + "'  and n.zt=1";
-		List<JyPyjhkcxx> list = dao.search(hql);
-		return list;
-
-	}
-
-	@Override
-	public List<JyPyjhkcxx> getZypyKcByjxjhhAndKcmc(String jxjhh, String kcmc) {
-		String hql = "from JyPyjhkcxx as n where n.jxjhh = '" + jxjhh + "' and n.sysKc.kczwmc like '%" + kcmc + "%' and n.zt=1";
-		List<JyPyjhkcxx> list = dao.search(hql);
-		return list;
-	}
+	
 
 	@Override
 	public List<JyPyjhkcxx> getPyjhkcbyjxjhh(String jxjhh) {
@@ -593,6 +580,24 @@ public class JyPyjhkcxxServiceImpl implements JyPyjhkcxxService {
 			dao.modify(jyPyjhkcxx);
 		}
 	}
+
+
+	@Override
+	public List<JyPyjhkcxx> getZypyKcByjxjhhAndKcmc(String jxjhh, String kcmc) {
+		String hql = "from JyPyjhkcxx as n where n.jxjhh = '" + jxjhh + "' and n.sysKc.kczwmc like '%" + kcmc + "%' and n.zt=1";
+		List<JyPyjhkcxx> list = dao.search(hql);
+		return list;
+	}
+	
+	@Override
+	public List<JyPyjhkcxx> getZypyKcByjxjhh(String jxjhh) {
+		String hql = "from JyPyjhkcxx as n where n.jxjhh = '" + jxjhh + "'  and n.zt=1";
+		List<JyPyjhkcxx> list = dao.search(hql);
+		return list;
+	}
+	
+	
+	
 
 	/**
 	 * 置某专业方向相关的培养计划课程信息的专业方向代码字段为null

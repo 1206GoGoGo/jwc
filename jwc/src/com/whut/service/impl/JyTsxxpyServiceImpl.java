@@ -1,6 +1,7 @@
 package com.whut.service.impl;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -10,10 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.whut.dao.BaseHibernateDAO;
-import com.whut.pojo.JyTsxxkcjsdyb;
+
 import com.whut.pojo.JyTsxxpy;
-import com.whut.pojo.SysKc;
 import com.whut.service.JyTsxxpyService;
+
+
+import com.whut.pojo.JyTsxxkcjsdyb;
+import com.whut.pojo.SysKc;
 import com.whut.service.SysKcService;
 
 @Service
@@ -219,10 +223,8 @@ public class JyTsxxpyServiceImpl implements JyTsxxpyService {
 	}
 
 	@Override
-	public List<JyTsxxpy> searchxvsn1(String xydm, String nj)// yuanwei
-	// searchxvsn
-	// zacun
-	{
+	public List<JyTsxxpy> searchxvsn1(String xydm, String nj){
+
 		new String();
 		List<JyTsxxpy> list = new ArrayList();
 		List<JyTsxxpy> temp = new ArrayList();
@@ -237,7 +239,6 @@ public class JyTsxxpyServiceImpl implements JyTsxxpyService {
 					list.add(jyTsxxpy);
 				}
 			}
-
 		} else if (xydm.equals("0") && !nj.equals("0")) {
 			temp = getTsInitList();
 			for (int i = 0; i < temp.size(); i++) {
@@ -254,6 +255,7 @@ public class JyTsxxpyServiceImpl implements JyTsxxpyService {
 		}
 		return list;
 	}
+
 
 	@Override
 	public List<SysKc> getLListByNjXy(String xydm, String nj) {
@@ -720,4 +722,5 @@ public class JyTsxxpyServiceImpl implements JyTsxxpyService {
 		}
 		return false;
 	}
+
 }

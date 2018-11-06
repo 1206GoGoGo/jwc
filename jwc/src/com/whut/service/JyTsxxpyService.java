@@ -3,10 +3,21 @@ package com.whut.service;
 import java.util.List;
 
 import com.whut.pojo.JyTsxxpy;
+
 import com.whut.pojo.SysKc;
 
 public interface JyTsxxpyService {
 	// 按学院，年级查询 2012计算机通识培养计划表
+
+
+	public List<JyTsxxpy> searchxvsn1(String xydm, String nj);
+
+	public List<JyTsxxpy> getTsInitList();
+	
+	public List<JyTsxxpy> gettspykcByXyNjMc(String xydm, String tsxxpydm,
+			String kcmc);
+	
+	
 
 	public List<JyTsxxpy> searchxvsn(String xydm, String nj);
 
@@ -14,7 +25,7 @@ public interface JyTsxxpyService {
 
 	public List<JyTsxxpy> getList();
 
-	public List<JyTsxxpy> getTsInitList();
+	
 
 	// public List<JyTsxxpy> getPyjhBytsxxpydm(String tsxxpydm);
 
@@ -28,15 +39,13 @@ public interface JyTsxxpyService {
 
 	public JyTsxxpy getPyjhById(String id);
 
-	// public List<JyTsxxpy> getListByNj(String nj);
-
-	// public List<JyTsxxpy> getPyjhBytsxxpydm(String tsxxpydm);
+	
 
 	public List<SysKc> getLListById(String tsxxpydm);
 
 	public List<SysKc> getRListById(String tsxxpydm);
 
-	public List<JyTsxxpy> searchxvsn1(String xydm, String nj);
+	
 
 	public List<JyTsxxpy> searchxvsn2(String xq, String nj);
 
@@ -50,8 +59,6 @@ public interface JyTsxxpyService {
 
 	public List<JyTsxxpy> getTsxxpyListByXyNj(String xydm, String nj);
 
-	public List<JyTsxxpy> gettspykcByXyNjMc(String xydm, String tsxxpydm,
-			String kcmc);
 
 	public List<String> getTsxxpyListByXydm(String xydm);
 
@@ -108,4 +115,5 @@ public interface JyTsxxpyService {
 	public JyTsxxpy getTsByNjAndMc(String nj, String kczwmc);
 
 	public boolean hasKcInNj(String kcdm, String nj);
+
 }

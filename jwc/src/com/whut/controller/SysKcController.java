@@ -1,5 +1,6 @@
 package com.whut.controller;
 
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +21,14 @@ import com.whut.service.JyTsxxpyService;
 import com.whut.service.SysKcService;
 import com.whut.service.SysXyService;
 
-/**
- * 课程库
- * @author wangql
- *
- */
+
 @RequestMapping(value="/SysKc")
 @Controller
 public class SysKcController {
+	
 	@Autowired
-	private SysKcService sysKcService; //课程
+	private SysKcService sysKcService;
+
 	@Autowired
 	private SysXyService sysXyService; //学院
 	@Autowired
@@ -305,4 +304,5 @@ public class SysKcController {
 	public @ResponseBody int depKc(String kcdm) {
 		return sysKcService.depKc(kcdm);
 	}
+
 }

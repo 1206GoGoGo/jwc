@@ -39,9 +39,8 @@ public class SysKc implements java.io.Serializable {
 	private Double kwxs; //课外学时
 	private Double sjxs2;//更改为上机学时
 	private String kcyl1;
-	private String sfqy;//是否弃用
 	private String kcyl2;
-	//private String kcyl3;
+	private String sfqy;
 	private String kcyl4;
 	private String kcyl5;
 	private String kcyl6;
@@ -70,7 +69,7 @@ public class SysKc implements java.io.Serializable {
 			String yxyqdm, String kcjj, String kcywjj, Double zhxs,
 			Double llxs, Double syxs, Double sjxs, String kczyzyjmd,
 			String zycks, String bz, String kcqmc, String kclbmc, Double kwxs,
-			Double sjxs2, String sfqy, String kcyl1,String kcyl2,
+			Double sjxs2, String kcyl1, String kcyl2, String sfqy,
 			String kcyl4, String kcyl5, String kcyl6, String kcyl7,
 			String kcyl8, String kcyl9, String kcyl10, Double sjzs, int zt,
 			Set jyGdxfdzsForXkcdm, Set jyGdxfdzsForKcdm, Set jyTsxxpies,
@@ -101,7 +100,7 @@ public class SysKc implements java.io.Serializable {
 		this.sfqy = sfqy;
 		this.kcyl1 = kcyl1;
 		this.kcyl2 = kcyl2;
-		//this.kcyl3 = kcyl3;
+		this.sfqy = sfqy;
 		this.kcyl4 = kcyl4;
 		this.kcyl5 = kcyl5;
 		this.kcyl6 = kcyl6;
@@ -316,14 +315,14 @@ public class SysKc implements java.io.Serializable {
 		this.kcyl2 = kcyl2;
 	}
 
-	/*public String getKcyl3() {
-		return this.kcyl3;
+	public String getSfqy() {
+		return this.sfqy;
+	}
+	
+	public void setSfqy(String sfqy) {
+		this.sfqy = sfqy;
 	}
 
-	public void setKcyl3(String kcyl3) {
-		this.kcyl3 = kcyl3;
-	}
-*/
 	public String getKcyl4() {
 		return this.kcyl4;
 	}
@@ -396,13 +395,6 @@ public class SysKc implements java.io.Serializable {
 		this.zt = zt;
 	}
 
-	public String getSfqy() {
-		return sfqy;
-	}
-
-	public void setSfqy(String sfqy) {
-		this.sfqy = sfqy;
-	}
 
 	
 }

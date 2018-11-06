@@ -123,4 +123,5 @@ public interface SysKcService {
 	//heyuqi 2016.6.8
 	public SysKc getKechengByIdAndSfqy(String id);
 	public List<SysKc> getByKcmcAndSfqy(String kczwmc);
+ 
 }

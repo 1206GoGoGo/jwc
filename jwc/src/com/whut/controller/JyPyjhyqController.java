@@ -3,7 +3,11 @@ package com.whut.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,8 +23,10 @@ import com.whut.service.JyPyjhyqService;
 import com.whut.service.JyZyxxService;
 import com.whut.service.SysKcService;
 
-
+@RequestMapping(value="/JyPyjhyq")
+@Controller
 public class JyPyjhyqController {
+
 	@Autowired
 	private JyPyjhyqService jyPyjhyqService; //培养计划要求
 	@Autowired
@@ -74,12 +80,16 @@ public class JyPyjhyqController {
 		return list;
 	}
 
+
 	/**
 	 * 根据查询条件进行查询
 	 * 
 	 * 如果某项条件没有指定，则为“0”
 	 * */
-	public List<JyPyjhyq> search(String xydm, String zydm, String nj) {
+
+	@RequestMapping(value="/search",method = RequestMethod.GET)
+	public @ResponseBody List<JyPyjhyq> search(String xydm, String zydm, String nj) {
+
 		List<JyPyjhyq> list = jyPyjhyqService.search(xydm, zydm, nj);
 		return list;
 	}
@@ -413,5 +423,4 @@ public class JyPyjhyqController {
 		}
 	}
 	
-
 }

@@ -16,6 +16,7 @@ import com.whut.service.SysKcService;
 
 @Service
 public class SysKcServiceImpl implements SysKcService {
+
 	@Autowired
 	private BaseHibernateDAO dao;
 
@@ -39,6 +40,7 @@ public class SysKcServiceImpl implements SysKcService {
 	public void modifyKecheng(SysKc sysKc) {
 		dao.modify(sysKc);
 	}
+
 
 	@Override
 	public void deleteKecheng(SysKc sysKc) {

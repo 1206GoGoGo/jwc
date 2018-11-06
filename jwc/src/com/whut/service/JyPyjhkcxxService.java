@@ -69,10 +69,7 @@ public interface JyPyjhkcxxService {
 
 	public List<JyPyjhkcxx> search(String jxjhh, int xq);
 
-	public List<JyPyjhkcxx> getZypyKcByjxjhh(String jxjhh);
-
-	public List<JyPyjhkcxx> getZypyKcByjxjhhAndKcmc(String jxjhh, String kcmc);
-
+	
 	public List<JyPyjhkcxx> getkcxxByJxjhhAndZt(String jxjhh);
 
 	public List<JyPyjhkcxx> getKcxx1(String jxjhh, String kcdm);
@@ -117,6 +114,12 @@ public interface JyPyjhkcxxService {
 	 * 逻辑删除jxjhh所有的课程
 	 * */
 	public void delJyPyjhkcxxByJxjhh(String jxjhh);
+
+	
+	public List<JyPyjhkcxx> getZypyKcByjxjhhAndKcmc(String jxjhh, String kcmc);
+	
+	public List<JyPyjhkcxx> getZypyKcByjxjhh(String jxjhh);
+
 
 	/**
 	 * 置某专业方向相关的培养计划课程信息的专业方向代码字段为null
