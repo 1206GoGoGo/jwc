@@ -63,9 +63,9 @@ public class SysXController {
 	}
 
 	/**
-	 * 通过系代码获取系名称
+	 * 通过系代码获取系
 	 * @param xdm 系代码
-	 * @return 系名称
+	 * @return 系
 	 */
 	@RequestMapping(value="/get", method = RequestMethod.GET)
 	public @ResponseBody SysX getxyByxdm(String xdm) {
