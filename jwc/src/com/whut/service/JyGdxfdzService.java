@@ -18,9 +18,9 @@ public interface JyGdxfdzService {
 
 	/**
 	 * 清除高低学分对照
-	 * @param jyGdxfdz  高低学分对照对象
+	 * @param id 高低学分对照id
 	 */
-	public void clearDZ(JyGdxfdz jyGdxfdz);
+	public void clearDZ(int id);
 
 	public JyGdxfdz findById(Number id);
 

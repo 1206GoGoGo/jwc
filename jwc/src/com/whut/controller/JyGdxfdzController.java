@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.whut.pojo.JyGdxfdz;
 import com.whut.service.JyGdxfdzService;
 
+
 @RequestMapping(value="/JyGdxfdz")
 @Controller
 public class JyGdxfdzController {
@@ -56,11 +57,11 @@ public class JyGdxfdzController {
 
 	/**
 	 * 清除高低学分对照
-	 * @param jyGdxfdz 高低学分对照对象
+	 * @param id 高低学分对照id
 	 */
-	@RequestMapping(value="/clear",method = RequestMethod.POST,consumes= "application/json")
-	public @ResponseBody String clearDZ(@RequestBody JyGdxfdz jyGdxfdz) {
-		jyGdxfdzService.clearDZ(jyGdxfdz);
+	@RequestMapping(value="/clear",method = RequestMethod.GET)
+	public @ResponseBody String clearDZ(int id) {
+		jyGdxfdzService.clearDZ(id);
 		return "clearSuccess";
 	}
 

@@ -104,9 +104,9 @@ public class JyGdxfdzServiceImpl implements JyGdxfdzService {
 	 * 取消某课程的课程高低学分对照
 	 * */
 	@Override
-	public void clearDZ(JyGdxfdz jyGdxfdz) {
+	public void clearDZ(int id) {
 		JyGdxfdz obj = (JyGdxfdz) dao.getObject("from JyGdxfdz where id = '"
-				+ jyGdxfdz.getId() + "'");
+				+ id + "'");
 		obj.setXkcdm(null);
 		obj.setSysKcByXkcdm(null);
 		dao.modify(obj);
