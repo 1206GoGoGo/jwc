@@ -3,12 +3,14 @@ package com.whut.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.whut.dao.BaseHibernateDAO;
 import com.whut.pojo.JyPyjhkcxxb;
 import com.whut.pojo.JyZyfx;
 import com.whut.service.JyPyjhkcxxbService;
 
+@Service
 public class JyPyjhkcxxbServiceImpl implements JyPyjhkcxxbService {
 
 	@Autowired
