@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.whut.pojo.JyXxgs;
 import com.whut.service.JyXxgsService;
 
-
+/**
+ * 选修归属
+ * @author wangql
+ *
+ */
 @RequestMapping(value="/JyXxgs")
 @Controller
 public class JyXxgsController {

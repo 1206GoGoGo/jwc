@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.whut.pojo.JyGdxfdz;
 import com.whut.service.JyGdxfdzService;
 
-
+/**
+ * 高低学分对照
+ * @author wangql
+ *
+ */
 @RequestMapping(value="/JyGdxfdz")
 @Controller
 public class JyGdxfdzController {
