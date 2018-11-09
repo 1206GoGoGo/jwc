@@ -276,7 +276,6 @@ public class SysKcServiceImpl implements SysKcService {
 	public List<SysKc> kcSearch(String all) {
 		String hql = new String();
 		hql = all;
-		System.out.println(hql);
 		List<SysKc> list = dao.search(hql);
 		return list;
 	}

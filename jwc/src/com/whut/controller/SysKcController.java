@@ -188,9 +188,9 @@ public class SysKcController {
 	 * @return 能否被修改  返回结果为null能被修改，否则不能被修改
 	 */
 	@SuppressWarnings("unchecked")
-	public List xgcheckKc(String kcdm, JyPyjhkcxx zyObj, JyTsxxpy tsObj) {
-		zyObj = jyPyjhkcxxService.getkcByKcdm(kcdm); //培养计划课程
-		tsObj = jyTsxxpyService.getkcByKcdm(kcdm);   //通识选修培养
+	public List xgcheckKc(String kcdm) {
+		JyPyjhkcxx zyObj = jyPyjhkcxxService.getkcByKcdm(kcdm); //培养计划课程
+		JyTsxxpy tsObj = jyTsxxpyService.getkcByKcdm(kcdm);   //通识选修培养
 		List results = new ArrayList();
 		String pyjhdm = new String();
 		if (zyObj == null && tsObj == null) {
