@@ -30,5 +30,7 @@ public interface JyXxtxService {
 
 	List<JyXxtx> getAllList();
 	
+	public void addXxtx(JyXxtx jyXxtx);
 
+	
 }

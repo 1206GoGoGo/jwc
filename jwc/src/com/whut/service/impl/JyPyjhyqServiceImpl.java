@@ -54,11 +54,6 @@ public class JyPyjhyqServiceImpl implements JyPyjhyqService {
 		return dao.search(hql);
 	}
 
-	// public List<JyPyjhyq> getpyListByXydm(String xydm) {
-	// String
-	// hql="from JyPyjhyq as n where n.jyZyxx.sysZy.sysX.sysXy.xydm='"+xydm+"'";
-	// return dao.search(hql);
-	// }
 
 	@Override
 	public List<JyPyjhyq> getpyListByXydm(String xydm) {
@@ -184,26 +179,10 @@ public class JyPyjhyqServiceImpl implements JyPyjhyqService {
 		dao.modify(jyPyjhyq);
 	}
 
-	//??????????????????????????
+	
 	@Override
 	public void updatePyjhyq(JyPyjhyq jyPyjhyq) {
 		
-		/*Jdbc jdbc = new Jdbc();
-		Connection connection = jdbc.getConnection();
-		try {
-			Statement st = connection.createStatement();
-			st.executeUpdate("UPDATE JY.JY_PYJHYQ  SET YWPYMBZW='"
-					+ jyPyjhyq.getYwpymbzw() + "',YWPYMBYW='"
-					+ jyPyjhyq.getYwpymbyw() + "',YWPYYQZW='"
-					+ jyPyjhyq.getYwpyyqzw() + "',YWPYYQYW='"
-					+ jyPyjhyq.getYwpyyqyw() + "'WHERE JXJHH='"
-					+ jyPyjhyq.getJxjhh() + "'");
-			st.close();
-			jdbc.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}*/
 	}
 
 	@Override

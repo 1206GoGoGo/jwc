@@ -38,6 +38,63 @@ public class JyPyjhyqController {
 	@Autowired
 	private SysKcService sysKcService; //课程
 
+	/**
+	 * 调整培养计划要求
+	 * @param jyPyjhyq
+	 */
+	@RequestMapping(value="/adjust", method=RequestMethod.POST, consumes="application/json")
+	public @ResponseBody void adjust(@RequestBody JyPyjhyq jyPyjhyq) {
+		JyPyjhyq o = jyPyjhyqService.getPyByJxjhh(jyPyjhyq.getJxjhh());
+		if (o != null) {
+			if (o.getZt() == 1) {
+				o.setZt(4);
+				jyPyjhyqService.modifyPyjhyq(o);
+			} else if (o.getZt() == 4) {
+				o.setZt(5);
+				jyPyjhyqService.modifyPyjhyq(o);
+			} else {
+				o.setZt(1);
+				jyPyjhyqService.modifyPyjhyq(o);
+			}
+		}
+	}
+	
+	
+	/**
+	 * 根据查询条件进行查询
+	 * 
+	 * 如果某项条件没有指定，则为“0”
+	 * */
+	@RequestMapping(value="/search",method = RequestMethod.GET)
+	public @ResponseBody List<JyPyjhyq> search(String xydm, String zydm, String nj) {
+
+		List<JyPyjhyq> list = jyPyjhyqService.search(xydm, zydm, nj);
+		return list;
+	}
+	
+	/**
+	 * 修改培养计划要求
+	 * @param jyPyjhyq
+	 */
+	@RequestMapping(value="/modify",method = RequestMethod.POST,consumes= "application/json")
+	public @ResponseBody String modifyPyjhyq(@RequestBody JyPyjhyq jyPyjhyq) {
+		JyPyjhyq jyjhyq2 = new JyPyjhyq();
+		jyjhyq2.setJxjhh(jyPyjhyq.getJxjhh());
+		jyjhyq2.setYwpymbzw(jyPyjhyq.getYwpymbzw());
+		jyjhyq2.setYwpymbyw(jyPyjhyq.getYwpymbyw());
+		jyjhyq2.setYwpyyqzw(jyPyjhyq.getYwpyyqzw());
+		jyjhyq2.setYwpyyqyw(jyPyjhyq.getYwpyyqzw());
+		jyPyjhyq.setYwpymbzw("");
+		jyPyjhyq.setYwpymbyw("");
+		jyPyjhyq.setYwpyyqzw("");
+		jyPyjhyq.setYwpyyqyw("");
+		jyPyjhyqService.modifyPyjhyq(jyPyjhyq);
+		jyPyjhyqService.updatePyjhyq(jyjhyq2);
+		return "UpdateSuccess";
+	}
+	
+	
+	
 	public List<JyPyjhyq> getpyListByZydm(String id) {
 		return jyPyjhyqService.getpyListByZydm(id);
 	}
@@ -81,18 +138,7 @@ public class JyPyjhyqController {
 	}
 
 
-	/**
-	 * 根据查询条件进行查询
-	 * 
-	 * 如果某项条件没有指定，则为“0”
-	 * */
-
-	@RequestMapping(value="/search",method = RequestMethod.GET)
-	public @ResponseBody List<JyPyjhyq> search(String xydm, String zydm, String nj) {
-
-		List<JyPyjhyq> list = jyPyjhyqService.search(xydm, zydm, nj);
-		return list;
-	}
+	
 
 	public List<JyPyjhkcxx> search1(String xydm, String zydm, String nj) {
 		List<JyPyjhkcxx> list = jyPyjhkcxxService.search1(xydm, zydm, nj);
@@ -108,26 +154,7 @@ public class JyPyjhyqController {
 		return jyPyjhyqService.getPyByJxjhh(jxjhh);
 	}
 
-	/**
-	 * 修改培养计划要求
-	 * @param jyPyjhyq
-	 */
-	@RequestMapping(value="/modify",method = RequestMethod.POST,consumes= "application/json")
-	public @ResponseBody String modifyPyjhyq(@RequestBody JyPyjhyq jyPyjhyq) {
-		JyPyjhyq jyjhyq2 = new JyPyjhyq();
-		jyjhyq2.setJxjhh(jyPyjhyq.getJxjhh());
-		jyjhyq2.setYwpymbzw(jyPyjhyq.getYwpymbzw());
-		jyjhyq2.setYwpymbyw(jyPyjhyq.getYwpymbyw());
-		jyjhyq2.setYwpyyqzw(jyPyjhyq.getYwpyyqzw());
-		jyjhyq2.setYwpyyqyw(jyPyjhyq.getYwpyyqzw());
-		jyPyjhyq.setYwpymbzw("");
-		jyPyjhyq.setYwpymbyw("");
-		jyPyjhyq.setYwpyyqzw("");
-		jyPyjhyq.setYwpyyqyw("");
-		jyPyjhyqService.modifyPyjhyq(jyPyjhyq);
-		jyPyjhyqService.updatePyjhyq(jyjhyq2);
-		return "UpdateSuccess";
-	}
+	
 
 	/**
 	 * 审核通过某处于“3申请调整”状态的教学计划jxjhh
@@ -372,7 +399,8 @@ public class JyPyjhyqController {
 	/*
 	 * 获得前面11个专业培养计划List<JyPyjhyq>
 	 */
-	public List<JyPyjhyq> getZt1356List() /* 2013-1-24新增 */
+	@RequestMapping(value="/getZt1356List",method = RequestMethod.GET)
+	public @ResponseBody List<JyPyjhyq> getZt1356List() /* 2013-1-24新增 */
 	{
 		List<JyPyjhyq> list = jyPyjhyqService.getZt1356List();
 		return list;
@@ -403,24 +431,6 @@ public class JyPyjhyqController {
 		}
 	}
 
-	/**
-	 * 调整培养计划要求
-	 * @param jyPyjhyq
-	 */
-	public void adjust(JyPyjhyq jyPyjhyq) {
-		JyPyjhyq o = jyPyjhyqService.getPyByJxjhh(jyPyjhyq.getJxjhh());
-		if (o != null) {
-			if (o.getZt() == 1) {
-				o.setZt(4);
-				jyPyjhyqService.modifyPyjhyq(o);
-			} else if (o.getZt() == 4) {
-				o.setZt(5);
-				jyPyjhyqService.modifyPyjhyq(o);
-			} else {
-				o.setZt(1);
-				jyPyjhyqService.modifyPyjhyq(o);
-			}
-		}
-	}
+	
 	
 }

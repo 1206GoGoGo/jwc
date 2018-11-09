@@ -53,7 +53,7 @@ public class SysXyController {
 	 * 获取所有学院信息
 	 * @return
 	 */
-	@RequestMapping(value="/getAll")  
+	@RequestMapping(value="/getAllList")  
 	public @ResponseBody List<SysXy> getAllList(){
 		List<SysXy> list = sysXyService.getAllList();
 		return list;

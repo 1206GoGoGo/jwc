@@ -16,5 +16,13 @@ public interface DocProgramService {
 	public void pyjhkcxxZhcxToExcel(List<pyjhkcxxZhcxObj> datas,
 			pyjhkcxxZhcxObjM nameobj, pyjhkcxxZhcxObjF flagobj, int len,
 			String filepath);
-
+	
+	/*
+	 * 教学计划批量打印：pldyExport（）
+	 * 
+	 * 打印培养计划课程信息表中”教学计划号“数组”jxjhhArray“中的 and
+	 * ”开课学期“为”xq“的课程，并按”排序方式pxfs“导出到excel文件中
+	 */
+	public void pldyExport(String[] jxjhhArray, String xq, String pxfs,
+			String filepath);
 }

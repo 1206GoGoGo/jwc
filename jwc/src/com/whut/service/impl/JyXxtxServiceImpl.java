@@ -180,4 +180,10 @@ public class JyXxtxServiceImpl implements JyXxtxService {
 		// TODO Auto-generated method stub
 		return dao.search("from JyXxtx");
 	}
+
+	@Override
+	public void addXxtx(JyXxtx jyXxtx) {
+		// TODO Auto-generated method stub
+		dao.add(jyXxtx);
+	}
 }

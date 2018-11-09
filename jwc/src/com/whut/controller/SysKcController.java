@@ -82,7 +82,7 @@ public class SysKcController {
 	 * @param id 课程代码
 	 * @return 课程对象
 	 */
-	@RequestMapping(value="/get", method = RequestMethod.GET)
+	@RequestMapping(value="/getKcById", method = RequestMethod.GET)
 	public @ResponseBody SysKc getKcById(String kcdm) {
 		SysKc sysKc = sysKcService.getKechengById(kcdm);
 		return sysKc;
@@ -142,7 +142,8 @@ public class SysKcController {
 	 * @param text 查询条件
 	 * @return 课程列表
 	 */
-	public List<SysKc> getMHKcList(int cb, String text) {
+	@RequestMapping(value="/getMHKcList", method = RequestMethod.GET)
+	public @ResponseBody List<SysKc> getMHKcList(int cb, String text) {
 		List<SysKc> list = sysKcService.getMHKcList(cb, text);
 		return list;
 	}

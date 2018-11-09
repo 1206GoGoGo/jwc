@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.whut.pojo.JyXxtx;
 import com.whut.service.JyXxtxService;
 
+
+
 @RequestMapping(value="/JyXxtx")
 @Controller
 public class JyXxtxController {
@@ -95,4 +97,15 @@ public class JyXxtxController {
 		jyXxtxService.RealDeleteMse(jyXxtx);
 	}
 	
+	/*
+	@RequestMapping(value="/addXxtx",method = RequestMethod.POST,consumes= "application/json")
+	public void addXxtx(@RequestBody JyXxtx jyXxtx, ArrayCollection xyList) {
+		List xyArrayList = xyList;
+		for (int i = 0; i < xyArrayList.size(); i++) {
+			jyXxtx.setJsf(xyArrayList.get(i).toString());
+			jyXxtxService.addXxtx(jyXxtx);
+		}
+	}
+	*/
+	//ArrayCollection可以用什么代替[材料学院, 测试学院T, 化工学院]
 }
