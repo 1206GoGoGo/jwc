@@ -11,7 +11,7 @@
             <generator class="assigned" />
         </id>
         
-        <many-to-one name="jyZyxx" class="com.whut.pojo.JyZyxx" update="false" insert="false" fetch="select">
+        <many-to-one name="jyZyxx" class="com.whut.pojo.JyZyxx" update="false" insert="false" fetch="select" lazy="false">
             <column name="JXJHH" length="10" not-null="true" unique="true" />
         </many-to-one>
         

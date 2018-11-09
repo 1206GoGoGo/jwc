@@ -43,8 +43,9 @@ public class JyPyjhyqController {
 	 * @param jyPyjhyq
 	 */
 	@RequestMapping(value="/adjust", method=RequestMethod.POST, consumes="application/json")
-	public @ResponseBody void adjust(@RequestBody JyPyjhyq jyPyjhyq) {
-		JyPyjhyq o = jyPyjhyqService.getPyByJxjhh(jyPyjhyq.getJxjhh());
+	public @ResponseBody void adjust(String jxjhh) {
+		//JyPyjhyq o = jyPyjhyqService.getPyByJxjhh(jyPyjhyq.getJxjhh());
+		JyPyjhyq o = jyPyjhyqService.getPyByJxjhh(jxjhh);
 		if (o != null) {
 			if (o.getZt() == 1) {
 				o.setZt(4);
