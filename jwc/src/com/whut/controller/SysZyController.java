@@ -55,7 +55,13 @@ public class SysZyController {
 		return "UpdateSuccess";
 	}
 
-	public String getZydmByXydm(String xydm) {
+	/**
+	 * 通过学院代码获取专业代码
+	 * @param xydm
+	 * @return
+	 */
+	@RequestMapping(value="/getZydmByXydm", method = RequestMethod.GET)
+	public @ResponseBody String getZydmByXydm(String xydm) {
 		return sysZyService.getZydmByXydm(xydm);
 	}
 
