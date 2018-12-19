@@ -94,7 +94,7 @@ public class SysZyController {
 		return sysZyService.checkZydm(zydm);
 	}
 
-	@RequestMapping(value="/whSearch", method = RequestMethod.GET)
+	@RequestMapping(value="/WhSearch", method = RequestMethod.GET)
 	public @ResponseBody List<SysZy> WhSearch(String ssxydm, String zymc) {
 		List<SysZy> list = sysZyService.WhSearch(ssxydm, zymc);
 		return list;
