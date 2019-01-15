@@ -106,7 +106,8 @@ public class SysZyController {
 		return list;
 	}
 
-	public List<SysZy> getzyListByxydm(String xydm) {
+	@RequestMapping(value="/getzyListByxydm", method = RequestMethod.GET)
+	public @ResponseBody List<SysZy> getzyListByxydm(String xydm) {
 		List<SysZy> list = sysZyService.getzyListByxydm(xydm);
 		return list;
 	}
