@@ -43,7 +43,8 @@ public class DmKhfsController {
 	 * 获取可使用的考核方式代码起始点
 	 * @return
 	 */
-	public String getKhfsdm() {
+	@RequestMapping(value="/getKhfsdm", method = RequestMethod.GET)
+	public @ResponseBody String getKhfsdm() {
 		return sysKhfsService.getKhfsdm();
 	}
 

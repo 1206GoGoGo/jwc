@@ -33,7 +33,8 @@ public class DmXklbController {
 	 * 获取可使用的学科类别代码起始点
 	 * @return
 	 */
-	public String getXklbdm() {
+	@RequestMapping(value="/getXklbdm", method = RequestMethod.GET)
+	public @ResponseBody String getXklbdm() {
 		return dmXklbService.getXklbdm();
 	}
 

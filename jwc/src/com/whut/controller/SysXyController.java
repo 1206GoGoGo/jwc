@@ -28,6 +28,16 @@ public class SysXyController {
 	private SysXyService sysXyService;
 	
 	/**
+	 * 检查学院代码是否已经存在
+	 * @param xydm
+	 * @return  noexist不存在   exist存在
+	 */
+	@RequestMapping(value="/checkXydm", method = RequestMethod.GET)
+	public @ResponseBody String checkXydm(String xydm) {
+		return sysXyService.checkXydm(xydm);
+	}
+	
+	/**
 	 * 通过学院代码获取学院信息
 	 * @param id
 	 * @return

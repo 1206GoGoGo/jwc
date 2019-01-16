@@ -78,7 +78,7 @@ public class JyQxServiceImpl implements JyQxService {
 	public List<SysJs> getAll() {
 		List<SysJs> list = new ArrayList<SysJs>();
 		list = dao.search("from SysJs");
-		Iterator it = list.iterator();
+		/*Iterator it = list.iterator();
 		List<JyYhqx> listJyYhqx = new ArrayList<JyYhqx>();
 		listJyYhqx = getAllJyYhqx();
 		Iterator Qxit = listJyYhqx.iterator();
@@ -92,7 +92,7 @@ public class JyQxServiceImpl implements JyQxService {
 			all.setXl("6");
 			all.setXl(tempQx.get(all.getZgh().toString()).toString());
 			
-		}
+		}*/
 		return list;
 	}
 	

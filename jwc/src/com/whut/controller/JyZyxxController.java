@@ -157,8 +157,10 @@ public class JyZyxxController {
 
 	/**
 	 * 检查是否有状态为1的相应zyxx
+	 * 返回  exist   noexist
 	 * */
-	public String checkJxjhh(String jxjhh) {
+	@RequestMapping(value="/checkJxjhh", method = RequestMethod.GET)
+	public @ResponseBody String checkJxjhh(String jxjhh) {
 		return jyZyxxService.checkJxjhh(jxjhh);
 	}
 

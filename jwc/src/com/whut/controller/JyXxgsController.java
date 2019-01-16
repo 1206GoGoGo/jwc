@@ -48,7 +48,8 @@ public class JyXxgsController {
 	 * 获取可使用的选修归属代码起始点
 	 * @return
 	 */
-	public String getXxgsdm() {
+	@RequestMapping(value="/getXxgsdm", method = RequestMethod.GET)
+	public @ResponseBody String getXxgsdm() {
 		String xxgsdm = sysXxgsService.getXxgsdm();
 		return xxgsdm;
 	}

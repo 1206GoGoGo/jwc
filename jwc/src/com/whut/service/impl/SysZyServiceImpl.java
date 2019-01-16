@@ -91,7 +91,6 @@ public class SysZyServiceImpl implements SysZyService {
 		String hql = "from SysZy as n where n.zydm='" + zydm + "'";
 		SysZy sysZy = (SysZy) dao.getObject(hql);
 		return sysZy;
-
 	}
 
 	@Override

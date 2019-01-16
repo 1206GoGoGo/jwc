@@ -56,7 +56,8 @@ public class DmKclbController {
 	 * 获取可使用的课程类别代码起始点
 	 * @return
 	 */
-	public String getKclbdm() {
+	@RequestMapping(value="/getKclbdm", method = RequestMethod.GET)
+	public @ResponseBody String getKclbdm() {
 		return dmKclbService.getKclbdm();
 	}
 

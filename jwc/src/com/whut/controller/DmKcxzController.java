@@ -45,7 +45,8 @@ public class DmKcxzController {
 	 * 获取可使用的课程性质代码起始点
 	 * @return
 	 */
-	public String getKcxzdm() {
+	@RequestMapping(value="/getKcxzdm", method = RequestMethod.GET)
+	public @ResponseBody String getKcxzdm() {
 		return dmKcxzService.getKcxzdm();
 	}
 

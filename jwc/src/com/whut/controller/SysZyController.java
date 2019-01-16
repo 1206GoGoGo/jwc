@@ -55,7 +55,13 @@ public class SysZyController {
 		return "UpdateSuccess";
 	}
 
-	public String getZydmByXydm(String xydm) {
+	/**
+	 * 通过学院代码获取专业代码
+	 * @param xydm
+	 * @return
+	 */
+	@RequestMapping(value="/getZydmByXydm", method = RequestMethod.GET)
+	public @ResponseBody String getZydmByXydm(String xydm) {
 		return sysZyService.getZydmByXydm(xydm);
 	}
 
@@ -94,12 +100,14 @@ public class SysZyController {
 		return sysZyService.checkZydm(zydm);
 	}
 
-	public List<SysZy> WhSearch(String ssxydm, String zymc) {
+	@RequestMapping(value="/WhSearch", method = RequestMethod.GET)
+	public @ResponseBody List<SysZy> WhSearch(String ssxydm, String zymc) {
 		List<SysZy> list = sysZyService.WhSearch(ssxydm, zymc);
 		return list;
 	}
 
-	public List<SysZy> getzyListByxydm(String xydm) {
+	@RequestMapping(value="/getzyListByxydm", method = RequestMethod.GET)
+	public @ResponseBody List<SysZy> getzyListByxydm(String xydm) {
 		List<SysZy> list = sysZyService.getzyListByxydm(xydm);
 		return list;
 	}
