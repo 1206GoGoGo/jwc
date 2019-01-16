@@ -219,4 +219,10 @@ public class JyTsxxpyController {
 	public @ResponseBody List<JyTsxxpy> getPyjhBytsdmAndnj(String tsdm, String nj) {
 		return jyTsxxpyService.getPyjhBytsdmAndnj(tsdm, nj);
 	}
+	
+	@RequestMapping(value="/getAllList")
+	public @ResponseBody List<JyTsxxpy> getAllList() {
+		List<JyTsxxpy> list = jyTsxxpyService.getAllList();
+		return list;
+	}
 }
