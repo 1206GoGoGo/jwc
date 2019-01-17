@@ -75,9 +75,10 @@ public class SysZyServiceImpl implements SysZyService {
 				max = c;
 			System.out.printf(i + ":" + c + "------");
 		}
-		char d = (char) (max + 1);
+		//char d = (char) (max + 1);
 
-		String e = xydm.substring(0, 3) + String.valueOf(d);
+		String e = xydm.substring(0, 3) + String.valueOf(max+1);
+		System.out.println("================="+e);
 		return e;
 	}
 

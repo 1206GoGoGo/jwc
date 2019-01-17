@@ -33,6 +33,7 @@ public class JyXxtxController {
 	//根据时间段查询收件箱信息
 	@RequestMapping(value="/getXxtxByjsf",method = RequestMethod.GET)
 	public @ResponseBody List<JyXxtx> getXxtxByjsf(String jsf,String sj1,String sj2){
+		System.out.println("================"+jsf.toString());
 		List<JyXxtx> list = jyXxtxService.getXxtxByjsf(jsf, sj1, sj2);
 		return list;
 	}
