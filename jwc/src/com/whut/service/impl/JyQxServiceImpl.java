@@ -152,6 +152,13 @@ public class JyQxServiceImpl implements JyQxService {
 		dao.modify(jyYhqx);
 	}
 	
+	public void delJy_Yhqx(String yhid) {
+		JyYhqx jyYhqx = (JyYhqx) dao
+				.getObject("from JyYhqx as n where n.yhid='" + yhid+ "'");
+		jyYhqx.setZt("0");
+		dao.modify(jyYhqx);
+	}
+	
 	public void mofifyJY_YHqX(JyYhqx jyYhqx) {
 		dao.modify(jyYhqx);
 	}

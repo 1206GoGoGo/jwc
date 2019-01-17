@@ -68,6 +68,12 @@ public class JyQxController {
 	public @ResponseBody void mofifyJY_YHqX(@RequestBody JyYhqx jyYhqx) {
 		quanXianService.mofifyJY_YHqX(jyYhqx);
 	}
+	
+	//根据用户Id删除用户权限(修改状态为0)，不用mofifyJY_YHqX
+	@RequestMapping(value="/delJy_Yhqx",method = RequestMethod.GET)
+	public @ResponseBody void delJy_Yhqx(String yhid) {
+		quanXianService.delJy_Yhqx(yhid);
+	}
 
 	@RequestMapping(value="/updateQX")
 	public @ResponseBody void updateQX() {

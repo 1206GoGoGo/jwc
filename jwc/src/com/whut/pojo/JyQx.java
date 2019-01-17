@@ -6,16 +6,16 @@ import java.util.HashSet;
 
 import java.util.Set;
 
-
-
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 /**
 
  * JyQx entity. @author MyEclipse Persistence Tools
 
  */
-
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "qxid")
 public class JyQx implements java.io.Serializable {
 
 	// Fields
@@ -23,7 +23,7 @@ public class JyQx implements java.io.Serializable {
 	private String qxmc;
 	private String zt;
 
-	@JsonManagedReference
+	//@JsonManagedReference
 	private Set<JyYhqx> jyYhqxes = new HashSet(0);
 	
 	// Constructors
