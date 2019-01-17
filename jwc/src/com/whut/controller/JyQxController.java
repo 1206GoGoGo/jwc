@@ -58,8 +58,8 @@ public class JyQxController {
 		return quanXianService.searchAll_JW();
 	}
 
-	@RequestMapping(value="/mofifyQX",method = RequestMethod.GET)
-	public @ResponseBody void mofifyQX(String yhid,int jyQx) {
+	@RequestMapping(value="/modifyQX",method = RequestMethod.GET)
+	public @ResponseBody void modifyQX(String yhid,int jyQx) {
 		BigDecimal bigDecimal = new BigDecimal(jyQx);
 		quanXianService.mofifyQX(yhid, bigDecimal);
 	}
