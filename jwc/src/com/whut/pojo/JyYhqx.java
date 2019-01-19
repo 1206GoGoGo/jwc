@@ -1,17 +1,19 @@
 package com.whut.pojo;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 /**
  * JyYhqx entity. @author MyEclipse Persistence Tools
  */
-
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "yhid")
 public class JyYhqx implements java.io.Serializable {
 
 	// Fields
 
 	private String yhid;
-	@JsonBackReference
+	//@JsonBackReference
 	private JyQx jyQx;
 	private String zt;
 

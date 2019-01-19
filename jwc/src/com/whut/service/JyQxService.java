@@ -25,6 +25,8 @@ public interface JyQxService {
 	public void mofifyQX(String yhid, BigDecimal jyQx);
 
 	public void mofifyJY_YHqX(JyYhqx jyYhqx);
+	
+	public void delJy_Yhqx(String yhid);
 
 	public void updateQX();
 	
