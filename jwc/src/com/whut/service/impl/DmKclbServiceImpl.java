@@ -28,7 +28,7 @@ public class DmKclbServiceImpl implements DmKclbService {
 		return dao.search(hql);
 	}
 
-	@Override
+	/*@Override
 	public String getKclbdm() {
 		// TODO Auto-generated method stub
 		int max = 0;
@@ -43,7 +43,27 @@ public class DmKclbServiceImpl implements DmKclbService {
 		}
 		char d = (char) (max + 1);
 		return String.valueOf(d);
+	}*/
+	
+	@Override
+	public String getKclbdm() { //wql更改
+		// TODO Auto-generated method stub
+		char max = '0';
+		char temp[];
+		List<DmKclb> list = dao.search("from DmKclb ");
+		for (int i = 0; i < list.size(); i++) {
+			temp = (list.get(i).getKclbdm()).toCharArray();
+			char c = temp[0];
+			if (max < c) {
+				max = c;
+			}
+		}
+		char d = (char) (max + 1);
 
+		if(max == '9') {  //10为A
+			d = 'A';
+		}
+		return String.valueOf(d);
 	}
 
 	@Override

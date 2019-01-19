@@ -67,20 +67,20 @@ public class JyXxtxServiceImpl implements JyXxtxService {
 		String hql = "";
 		List<JyXxtx> list = new ArrayList<JyXxtx>();
 		if (fsf.equals("") && sj1.equals("") && sj2.equals("")) {
-			hql = "from JyXxtx order by xxdm desc and n.zt =1";
+			hql = "from JyXxtx  and n.zt =1 order by xxdm desc";
 		}
 		if (fsf.equals("") && !sj1.equals("") && sj2.equals("")) {
 			hql = "from JyXxtx as n where n.fssj - to_date('" + sj1
-					+ "','MM/dd/yyyy') > 0 order by xxdm desc and n.zt =1";
+					+ "','MM/dd/yyyy') > 0  and n.zt =1 order by xxdm desc";
 		}
 		if (fsf.equals("") && sj1.equals("") && !sj2.equals("")) {
 			hql = "from JyXxtx as n where n.fssj - to_date('" + sj2
-					+ "','MM/dd/yyyy')< 0 order by xxdm desc and n.zt =1";
+					+ "','MM/dd/yyyy')< 0  and n.zt =1 order by xxdm desc";
 		}
 		if (fsf.equals("") && !sj1.equals("") && !sj2.equals("")) {
 			hql = "from JyXxtx as n where  n.fssj between to_date('" + sj1
 					+ "','MM/dd/yyyy') and to_date('" + sj2
-					+ "','MM/dd/yyyy') order by xxdm desc and n.zt =1";
+					+ "','MM/dd/yyyy') and n.zt =1 order by xxdm desc ";
 		}
 		if (!fsf.equals("") && sj1.equals("") && sj2.equals("")) {
 			hql = "from JyXxtx as n where n.fsf='" + fsf
@@ -94,13 +94,13 @@ public class JyXxtxServiceImpl implements JyXxtxService {
 		if (!fsf.equals("") && sj1.equals("") && !sj2.equals("")) {
 			hql = "from JyXxtx as n where n.fsf='" + fsf
 					+ "' and n.zt =1 and n.fssj - to_date('" + sj2
-					+ "','MM/dd/yyyy')< 0 order by xxdm desc and n.zt !=0";
+					+ "','MM/dd/yyyy')< 0 and n.zt !=0 order by xxdm desc";
 		}
 		if (!fsf.equals("") && !sj1.equals("") && !sj2.equals("")) {
 			hql = "from JyXxtx as n where n.fsf='" + fsf
 					+ "' and n.zt =1 and  n.fssj between to_date('" + sj1
 					+ "','MM/dd/yyyy') and to_date('" + sj2
-					+ "','MM/dd/yyyy') order by xxdm desc and n.zt !=0";
+					+ "','MM/dd/yyyy') and n.zt !=0 order by xxdm desc";
 		}
 		list = dao.search(hql);
 		return list;

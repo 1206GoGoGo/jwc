@@ -240,7 +240,7 @@ public class SysKcController {
 	 * 拒绝课程修改
 	 * @param syskc 课程对象
 	 */
-	@RequestMapping(value="/del", method = RequestMethod.GET)
+	@RequestMapping(value="/del",method = RequestMethod.POST,consumes= "application/json")
 	public @ResponseBody String del(@RequestBody SysKc syskc) {
 		sysKcService.del(syskc);
 		return "DelSuccess";
@@ -275,7 +275,7 @@ public class SysKcController {
 	 * 通过课程修改
 	 * @param syskc 课程对象
 	 */
-	@RequestMapping(value="/passforkcsh", method = RequestMethod.GET)
+	@RequestMapping(value="/passforkcsh",method = RequestMethod.POST,consumes= "application/json")
 	public @ResponseBody String passforkcsh(@RequestBody SysKc syskc) {
 		sysKcService.passforkcsh(syskc);
 		return "pass";

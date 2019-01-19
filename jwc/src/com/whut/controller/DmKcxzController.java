@@ -65,9 +65,10 @@ public class DmKcxzController {
 	 * @param dmKcxz
 	 */
 	@RequestMapping(value="/delete", method = RequestMethod.GET)
-	public void deleteKcxz(String id) {
+	public @ResponseBody String deleteKcxz(String id) {
 		DmKcxz dmKcxz = dmKcxzService.getKcxzById(id);
 		dmKcxzService.deleteKcxz(dmKcxz);
+		return "DeleteSuccess";
 	}
 
 	/**

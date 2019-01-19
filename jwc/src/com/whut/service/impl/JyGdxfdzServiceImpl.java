@@ -109,6 +109,7 @@ public class JyGdxfdzServiceImpl implements JyGdxfdzService {
 				+ id + "'");
 		obj.setXkcdm(null);
 		obj.setSysKcByXkcdm(null);
+		obj.setZt("0"); //清除后将状态设置为0  wangql
 		dao.modify(obj);
 
 	}

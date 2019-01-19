@@ -61,6 +61,7 @@ public class SysZyServiceImpl implements SysZyService {
 		dao.modify(sysZy);
 	}
 
+	/*
 	public String getZydmByXydm(String xydm) {
 		String hql = "from SysZy as n where n.xydm='" + xydm + "'";
 		List<SysZy> list = dao.search(hql);
@@ -73,14 +74,49 @@ public class SysZyServiceImpl implements SysZyService {
 			int c = b[3];
 			if (max < c)
 				max = c;
-			System.out.printf(i + ":" + c + "------");
+			System.out.printf(i + ":" + max + "------");
 		}
-		//char d = (char) (max + 1);
+		char d = (char) (max + 1);
+		
+		if(max<=10) {  //为数字时
+			d = (char) (d + '0');
+		}//else 时字母时，不处理
+		
+		//String d = String.valueOf(max + 1);
 
-		String e = xydm.substring(0, 3) + String.valueOf(max+1);
+		String e = xydm.substring(0, 3) + String.valueOf(d);
+		//String e = xydm.substring(0, 3) + d;
 		System.out.println("================="+e);
 		return e;
 	}
+	*/
+	
+	public String getZydmByXydm(String xydm) {  //wql更改
+		String hql = "from SysZy as n where n.xydm='" + xydm + "'";
+		List<SysZy> list = dao.search(hql);
+
+		String last = "0";
+		char max = '0';
+		for (int i = 0; i < list.size(); i++) {
+			last = list.get(i).getZydm();
+			char[] b = last.toCharArray();
+			char c = b[3];
+			if (max < c)
+				max = c;
+			System.out.printf(i + ":" + max + "------");
+		}
+		char d = (char) (max + 1);
+		
+		if(max == '9') {  //10为A
+			d = 'A';
+		}
+
+		String e = xydm.substring(0, 3) + String.valueOf(d);
+		System.out.println("================="+e);
+		return e;
+	}
+	
+	
 
 	@Override
 	public void addZy(SysZy sysZy) {
