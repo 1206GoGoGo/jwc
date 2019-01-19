@@ -49,7 +49,7 @@ public class JyGdxfdzServiceImpl implements JyGdxfdzService {
 	public List<JyGdxfdz> search(String kcm) {
 
 		String hql = "from  JyGdxfdz as n where n.sysKcByKcdm.kczwmc like'"
-				+ kcm + "%'";
+				+ kcm + "%' and n.zt != 0";
 		List<JyGdxfdz> list = dao.search(hql);
 		return list;
 	}

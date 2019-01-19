@@ -213,7 +213,8 @@ public class SysKcController {
 	 * @return 能否被删除  返回结果为null能被删除，否则不能被删除
 	 */
 	@SuppressWarnings("rawtypes")
-	public List chackKc(String kcdm) {
+	@RequestMapping(value="/chackKc", method = RequestMethod.GET)
+	public @ResponseBody List chackKc(String kcdm) {
 		JyPyjhkcxx zyObj = jyPyjhkcxxService.getkcByKcdm(kcdm);  //培养计划课程信息
 		JyTsxxpy tsObj = jyTsxxpyService.getkcByKcdm(kcdm);      //通识选修培养
 		List results = new ArrayList();
