@@ -192,9 +192,19 @@ public class BaseHibernateDAOImpl implements BaseHibernateDAO {
 
 	public Long getmaxid(String table, String idString) {
 		// TODO Auto-generated method stub
-		BigDecimal l = (BigDecimal) HibernateUtils.getCurrentSession().createQuery(
+		Session session = HibernateUtils.getCurrentSession();
+		Transaction tx = session.beginTransaction();
+		BigDecimal l =  null ;
+		try {
+			l = (BigDecimal)session.createQuery("select max(n." + idString + ") from " + table + " n").uniqueResult();
+			tx.commit();
+		} catch (HibernateException ex) {
+			ex.printStackTrace();
+		}
+		
+		/*BigDecimal l = (BigDecimal) HibernateUtils.getCurrentSession().createQuery(
 				"select max(n." + idString + ") from " + table + " n")
-				.uniqueResult();
+				.uniqueResult();*/
 		return new Long(l.longValue());
 	}
 
