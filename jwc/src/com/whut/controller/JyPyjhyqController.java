@@ -16,7 +16,9 @@ import com.whut.pojo.JyPyjhkcxx;
 import com.whut.pojo.JyPyjhkcxxb;
 import com.whut.pojo.JyPyjhyq;
 import com.whut.pojo.JyZyxx;
+import com.whut.pojo.PyjhyqInfo;
 import com.whut.pojo.SysKc;
+import com.whut.pojo.SysZy;
 import com.whut.service.JyPyjhkcxxService;
 import com.whut.service.JyPyjhkcxxbService;
 import com.whut.service.JyPyjhyqService;
@@ -101,7 +103,12 @@ public class JyPyjhyqController {
 	}
 
 	//zydm---jxjhh修改
-	public void addPyjhyqInfo(JyPyjhyq jyPyjhyq, String zydm) {
+	@RequestMapping(value="/addPyjhyqInfo",method = RequestMethod.POST,consumes= "application/json")
+	public @ResponseBody String addPyjhyqInfo(@RequestBody PyjhyqInfo pyjhyqInfo) {
+		
+		JyPyjhyq jyPyjhyq = pyjhyqInfo.getJyPyjhyq();
+		String zydm	= pyjhyqInfo.getZydm();	
+		
 		if (zydm == "") {
 			jyPyjhyqService.addPyjhyqInfo(jyPyjhyq);
 		} else {
@@ -109,7 +116,8 @@ public class JyPyjhyqController {
 			jyPyjhyq.setJyZyxx(jyZyxx);
 			jyPyjhyqService.addPyjhyqInfo(jyPyjhyq);
 		}
-
+		
+		return "addPyjhyqInfoSuccess";
 	}
 
 	/**
@@ -151,7 +159,8 @@ public class JyPyjhyqController {
 		return list;
 	}
 
-	public JyPyjhyq getPyjhyqByJxjhh(String jxjhh) {
+	@RequestMapping(value="/getPyjhyqByJxjhh",method = RequestMethod.GET)
+	public @ResponseBody JyPyjhyq getPyjhyqByJxjhh(String jxjhh) {
 		return jyPyjhyqService.getPyByJxjhh(jxjhh);
 	}
 
